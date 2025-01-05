@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "concurrently \"vite\" \"tailwindcss -i ./src/css/input.scss -o ./src/css/tailwind.css --watch\" \"twlit --output ./src/css/twlit.js --input ./src/css/tailwind.css\"",
     "clear-cache": "vite build --clearCache",
-    "build": "vite build",
+    "build": "NODE_OPTIONS=--no-experimental-fetch vite build",
     "preview": "vite preview",
     "postbuild": "copy _headers dist",
     "lighthouse": "concurrently \"vite preview\" \"lighthouse http://localhost:4173 --budget-path=./budget.json --view\"",
